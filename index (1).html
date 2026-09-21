@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luné Bath Co. — Intimate Wellness</title>
+<style>
+:root{--bg:#0d0b0e;--panel:#171218;--soft:#241923;--text:#f7edf1;--muted:#b9aab2;--accent:#b85b78;--accent2:#e4a4b9}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif}
+a{text-decoration:none;color:inherit}.nav{display:flex;justify-content:space-between;align-items:center;padding:22px 6%;border-bottom:1px solid #2a2028;position:sticky;top:0;background:#0d0b0eeF;backdrop-filter:blur(10px);z-index:3}
+.logo{font-size:22px;letter-spacing:3px;font-weight:700}.navlinks{display:flex;gap:22px;color:var(--muted);font-size:14px}.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:42px;align-items:center;padding:70px 6%;max-width:1250px;margin:auto}
+.kicker{color:var(--accent2);letter-spacing:3px;font-size:12px}.hero h1{font-size:clamp(42px,6vw,78px);line-height:.98;margin:18px 0}.hero p{color:var(--muted);line-height:1.7;max-width:470px}.btn{display:inline-block;background:var(--accent);padding:14px 21px;border-radius:3px;margin-top:16px;font-weight:700;font-size:13px;letter-spacing:1px}.heroimg{height:420px;border-radius:12px;background:linear-gradient(135deg,#35202d,#120e13);display:flex;align-items:center;justify-content:center;overflow:hidden}.heroimg img{width:100%;height:100%;object-fit:cover;opacity:.82}
+.section{max-width:1250px;margin:auto;padding:35px 6% 75px}.section h2{font-size:32px;margin-bottom:8px}.sectionintro{color:var(--muted);margin-bottom:30px}.products{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.product{background:var(--panel);border:1px solid #2a2028;border-radius:10px;overflow:hidden}.product img{width:100%;height:240px;object-fit:cover;background:#251a22}.productbody{padding:20px}.tag{font-size:11px;color:var(--accent2);letter-spacing:1px}.product h3{margin:10px 0;font-size:19px}.product p{color:var(--muted);font-size:14px;line-height:1.5}.product .btn{margin-top:8px;width:100%;text-align:center}
+.notice{background:#211720;border:1px solid #47303d;border-radius:10px;padding:20px;color:#d7c4cc;font-size:13px;line-height:1.6}.footer{border-top:1px solid #2a2028;padding:35px 6%;color:var(--muted);font-size:12px;line-height:1.7}
+@media(max-width:800px){.navlinks{display:none}.hero{grid-template-columns:1fr;padding-top:42px}.heroimg{height:300px}.products{grid-template-columns:1fr}.product img{height:260px}}
+</style>
+
+<style>
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 28px}
+.filter{border:1px solid #49313e;background:#171218;color:#e8d6de;padding:10px 14px;border-radius:20px;cursor:pointer}
+.filter:hover{background:#b85b78;color:white}
+.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
+.trust div{background:#171218;border:1px solid #2a2028;padding:18px;border-radius:8px}
+.trust strong{display:block;margin-bottom:6px}.trust span{color:#b9aab2;font-size:13px;line-height:1.5}
+@media(max-width:800px){.trust{grid-template-columns:1fr}}
+</style>
+<script>
+function filterProducts(category){
+  document.querySelectorAll('.product').forEach(card=>{
+    card.style.display=(category==='all'||card.dataset.category===category)?'block':'none';
+  });
+}
+</script>
+</head>
+<body>
+<header class="nav">
+  <div class="logo">LUNÉ BATH CO.</div>
+  <nav class="navlinks"><a href="#collection">Collection</a><a href="#about">About</a><a href="#disclosure">Dropshipping</a><a href="#start">How it works</a></nav>
+</header>
+
+<main>
+<section class="hero">
+  <div>
+    <div class="kicker">PRIVATE WELLNESS · 18+</div>
+    <h1>Your daily ritual of relaxation.</h1>
+    <p>Uma seleção discreta de produtos de bem-estar íntimo, acessórios e experiências para momentos pessoais ou a dois.</p>
+    <a class="btn" href="#collection">EXPLORAR COLEÇÃO</a>
+  </div>
+  <div class="heroimg">
+    <img src="https://images.unsplash.com/photo-1615397349754-cfa2066a298e?auto=format&fit=crop&w=1000&q=80" alt="Ambiente elegante e discreto">
+  </div>
+</section>
+
+<section class="section" id="collection">
+  <h2>Curated for intimacy</h2>
+  <p class="sectionintro">Bombas de banho, presentes de spa e momentos de relaxamento — selecionados para ti.</p>
+  <div class="filters">
+    <button class="filter" onclick="filterProducts('all')">Todos</button>
+    <button class="filter" onclick="filterProducts('wellness')">Wellness</button>
+    <button class="filter" onclick="filterProducts('couples')">Para casais</button>
+    <button class="filter" onclick="filterProducts('care')">Cuidados</button>
+    <button class="filter" onclick="filterProducts('gifts')">Presentes</button>
+  </div>
+  <div class="products">
+    <article class="product" data-category="wellness"><img src="https://images.unsplash.com/photo-1615397349754-cfa2066a298e?auto=format&fit=crop&w=700&q=80" alt="Bem-estar íntimo"><div class="productbody"><div class="tag">WELLNESS</div><h3>Personal Wellness</h3><p>Explora opções de bem-estar íntimo e acessórios discretos.</p><a class="btn" href="#https://www.amazon.es/s?k=bath+bombs" target="_blank" rel="nofollow noopener">VER COLEÇÃO</a></div></article>
+    <article class="product" data-category="couples"><img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=700&q=80" alt="Produtos para casais"><div class="productbody"><div class="tag">COUPLES</div><h3>For Two</h3><p>Descobre acessórios pensados para momentos a dois.</p><a class="btn" href="#https://www.amazon.es/s?k=relaxing+bath+gift+set" target="_blank" rel="nofollow noopener">VER COLEÇÃO</a></div></article>
+    <article class="product" data-category="care"><img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=700&q=80" alt="Cuidados pessoais"><div class="productbody"><div class="tag">SELF CARE</div><h3>Private Care</h3><p>Produtos de autocuidado e cuidados pessoais.</p><a class="btn" href="#https://www.amazon.es/s?k=natural+bath+bombs" target="_blank" rel="nofollow noopener">VER COLEÇÃO</a></div></article>
+    <article class="product" data-category="wellness"><img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=700&q=80" alt="Óleos e massagem"><div class="productbody"><div class="tag">RELAXATION</div><h3>Massage & Relax</h3><p>Óleos e acessórios para criar um ambiente relaxante.</p><a class="btn" href="#https://www.amazon.es/s?k=spa+bath+salts" target="_blank" rel="nofollow noopener">VER COLEÇÃO</a></div></article>
+    <article class="product" data-category="gifts"><img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=700&q=80" alt="Presentes"><div class="productbody"><div class="tag">GIFTS</div><h3>Gift Ideas</h3><p>Ideias para presentes discretos e experiências especiais.</p><a class="btn" href="#https://www.amazon.es/s?k=bath+gift+box" target="_blank" rel="nofollow noopener">VER COLEÇÃO</a></div></article>
+    <article class="product" data-category="care"><img src="https://images.unsplash.com/photo-1619451334792-150fd785ee74?auto=format&fit=crop&w=700&q=80" alt="Acessórios de viagem"><div class="productbody"><div class="tag">TRAVEL</div><h3>Travel Essentials</h3><p>Acessórios compactos para manter a privacidade em viagem.</p><a class="btn" href="#https://www.amazon.es/s?k=bath+and+body+gift+set" target="_blank" rel="nofollow noopener">VER COLEÇÃO</a></div></article>
+  </div>
+<div class="trust">
+    <div><strong>Discreet discovery</strong><span>Uma experiência de navegação simples e privada.</span></div>
+    <div><strong>Curated selection</strong><span>Conteúdo informativo e seleção de produtos.</span></div>
+    <div><strong>Amazon recommendations</strong><span>O cliente conclui a compra diretamente na Amazon.</span></div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <h2>Discreet by design.</h2>
+  <p class="sectionintro">A Luné Bath Co. pretende tornar a descoberta de produtos íntimos simples, privada e informada.</p>
+  <div class="notice">Este website está em fase de protótipo. Os botões encaminham para pesquisas de produtos na Amazon. Antes de publicar, serão adicionados links especiais oficiais e conteúdo original.</div>
+</section>
+</main>
+
+
+<section class="section" id="start">
+  <h2>Começa a explorar</h2>
+  <p class="sectionintro">Acede às categorias através dos parceiros. Os preços, disponibilidade e condições são apresentados no website de destino.</p>
+  <div class="notice">
+    <strong>Nota de transparência:</strong><br>
+    A Luné Bath Co. será uma site de recomendações com links Amazon. O cliente deverá concluir a compra na própria loja, enquanto o fornecedor parceiro poderá tratar do armazenamento e envio. Este protótipo ainda não recolhe pagamentos nem dados de cartão.
+  </div>
+</section>
+
+
+<section class="section" id="supplier-roadmap">
+  <h2>Discover your next relaxing bath.</h2>
+  <p class="sectionintro">O nosso próximo passo é criar conteúdo original sobre bombas de banho, comparar produtos e encaminhar os visitantes para páginas relevantes da Amazon.</p>
+  <div class="notice">
+    <strong>Checklist antes de publicar:</strong><br>
+    • Conteúdo original com recomendações e comparações úteis.<br>
+    • Links Amazon corretamente identificados e atualizados.<br>
+    • Informação clara sobre ingredientes, alergénios e utilização segura.<br>
+    • Divulgação visível da relação de afiliado.<br>
+    • Conteúdo público e original antes da candidatura ao programa.
+  </div>
+</section>
+
+
+<section class="section" id="launch-plan">
+  <h2>Luné Bath Co. — Launch Plan</h2>
+  <p class="sectionintro">Uma seleção editorial de produtos para criar uma rotina de banho relaxante.</p>
+  <div class="notice">
+    <strong>Catálogo inicial sugerido</strong><br>
+    1. Bombas de banho aromáticas<br>
+    2. Kits de 4 bombas de banho<br>
+    3. Kits de presente para spa<br>
+    4. Bombas de banho naturais<br>
+    5. Bombas de banho com óleos essenciais — verificar alegações e ingredientes<br>
+    6. Sais de banho<br>
+    7. Shower steamers<br>
+    8. Velas e acessórios de ambiente<br>
+    9. Esponjas e acessórios de banho<br>
+    10. Caixas de autocuidado
+  </div>
+  <div class="notice">
+    <strong>Critérios de publicação</strong><br>
+    • Confirmar preço, disponibilidade e entrega na página Amazon.<br>
+    • Não copiar avaliações, fotografias ou descrições protegidas sem autorização.<br>
+    • Criar comentários e comparações originais.<br>
+    • Evitar alegações médicas ou promessas não comprovadas.<br>
+    • Identificar claramente os links de afiliado.<br>
+    • Adicionar páginas de Contacto, Política de Privacidade, Cookies e Divulgação de Afiliado.
+  </div>
+  <div class="notice">
+    <strong>Plano de conteúdo inicial</strong><br>
+    • 5 artigos: melhores bombas de banho para relaxar, presentes de spa, ingredientes a procurar, como usar bombas de banho e cuidados com peles sensíveis.<br>
+    • 10 publicações para Instagram/Reels com demonstrações, rotinas e comparações sem alegações exageradas.<br>
+    • Registar o website e as páginas sociais exatas na candidatura Amazon Associates.
+  </div>
+</section>
+
+
+<section class="section" id="europe-launch">
+  <h2>European launch roadmap</h2>
+  <p class="sectionintro">Começar com Portugal e expandir progressivamente para Espanha, França, Itália e Alemanha, adaptando idioma, links Amazon e requisitos legais a cada mercado.</p>
+  <div class="notice">
+    <strong>Prioridades com orçamento de 100 €</strong><br>
+    • Usar uma landing page leve e alojamento gratuito ou de baixo custo.<br>
+    • Reservar orçamento para domínio apenas depois de validar o nome.<br>
+    • Criar conteúdo original em português e inglês; traduzir os conteúdos com melhor desempenho.<br>
+    • Começar com 10 recomendações e 5 artigos úteis, sem comprar stock.<br>
+    • Não investir em anúncios pagos antes de validar cliques e conversões orgânicas.
+  </div>
+  <div class="notice">
+    <strong>Conformidade Amazon</strong><br>
+    • Candidatar o site e as páginas sociais aos mercados pretendidos.<br>
+    • Usar apenas Special Links oficiais quando a conta estiver aprovada.<br>
+    • Mostrar a divulgação de afiliado junto às recomendações e no site.<br>
+    • Confirmar preços e disponibilidade diretamente na Amazon.<br>
+    • Evitar logótipos, imagens ou textos de vendedores sem autorização.
+  </div>
+</section>
+
+
+<section class="section" id="starter-catalogue">
+  <h2>Starter catalogue</h2>
+  <p class="sectionintro">Uma seleção inicial para testar interesse e criar conteúdo editorial. Os links são pesquisas de exemplo e devem ser substituídos por Special Links oficiais após aprovação.</p>
+  <div class="notice">
+    <strong>10 linhas de produto</strong><br>
+    1. Bombas de banho aromáticas<br>
+    2. Kits de 4 bombas de banho<br>
+    3. Kits de presente de spa<br>
+    4. Bombas de banho com ingredientes naturais<br>
+    5. Bombas de banho com manteiga de karité<br>
+    6. Sais de banho<br>
+    7. Shower steamers<br>
+    8. Caixas de autocuidado<br>
+    9. Bombas de banho para presentes infantis — apenas após verificar segurança e idade recomendada<br>
+    10. Acessórios de banho e relaxamento
+  </div>
+</section>
+
+
+<section class="section" id="content-starter-pack">
+  <h2>Content starter pack</h2>
+  <p class="sectionintro">Conteúdo editorial inicial para lançar a marca sem stock e com investimento reduzido.</p>
+  <div class="notice">
+    <strong>5 artigos prioritários</strong><br>
+    • Best Bath Bombs for a Relaxing Evening<br>
+    • How to Choose Bath Bomb Ingredients<br>
+    • Bath Bomb Gift Sets: What to Look For<br>
+    • How to Use a Bath Bomb Correctly<br>
+    • Bath Products for Sensitive Skin: What to Check
+  </div>
+  <div class="notice">
+    <strong>10 ideias para redes sociais</strong><br>
+    • Rotina de banho de 10 minutos<br>
+    • Comparação de aromas<br>
+    • Unboxing de um kit de spa<br>
+    • Ingredientes: o que procurar no rótulo<br>
+    • Ideias de presentes<br>
+    • Antes/depois da preparação da banheira<br>
+    • Conteúdo ASMR de água e efervescência<br>
+    • Guia de utilização<br>
+    • Erros a evitar<br>
+    • Seleção semanal de produtos
+  </div>
+  <div class="notice">
+    <strong>Regras editoriais</strong><br>
+    • Usar fotografias próprias ou devidamente autorizadas.<br>
+    • Não copiar avaliações, classificações ou descrições da Amazon.<br>
+    • Não fazer alegações médicas ou promessas de tratamento.<br>
+    • Confirmar ingredientes, alergénios, advertências e instruções no vendedor.<br>
+    • Usar links especiais apenas depois da aprovação e identificação correta da conta.
+  </div>
+</section>
+
+<footer class="footer" id="disclosure">
+  <strong>Divulgação de afiliado</strong><br>
+  Os preços, disponibilidade, ingredientes e condições de compra são definidos pela Amazon e devem ser verificados na página do produto.<br><br>
+  © 2026 Luné Bath Co. · Conteúdo destinado a maiores de 18 anos.
+<p class="affiliate-disclosure">As an Amazon Associate I earn from qualifying purchases.</p></footer>
+</body>
+</html>
