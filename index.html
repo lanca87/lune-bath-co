@@ -3,106 +3,810 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LUNÉ BATH CO. | Bath & Wellness</title>
+
+<meta name="description" content="LUNÉ BATH CO. — inspiração para rituais de banho, bombas de banho e presentes de spa.">
+
+<title>LUNÉ BATH CO. | Bath Rituals</title>
 
 <style>
-*{box-sizing:border-box}
-body{margin:0;background:#0d0b0e;color:#f7edf1;font-family:Arial,sans-serif}
-header{padding:24px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #30232c}
-.logo{font-size:25px;font-weight:bold;letter-spacing:3px}
-nav a{color:#d6c4cc;text-decoration:none;margin-left:25px}
-.hero{text-align:center;padding:90px 20px;background:linear-gradient(#24131f,#0d0b0e)}
-.hero h1{font-size:48px;margin:10px 0}
-.hero p{color:#d5bdc8;font-size:18px}
-.btn{display:inline-block;background:#bd5b7d;color:white;padding:15px 28px;border-radius:5px;text-decoration:none;font-weight:bold;margin-top:18px}
-section{max-width:1150px;margin:auto;padding:55px 6%}
-h2{text-align:center;font-size:32px}
-.intro{text-align:center;color:#cbb9c3}
-.products{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:30px}
-.card{background:#191219;border:1px solid #382834;border-radius:10px;padding:25px}
-.card h3{color:#f2b6cb}
-.card p{color:#cbb9c3;line-height:1.6}
-footer{text-align:center;padding:35px;color:#a997a1;border-top:1px solid #30232c}
-@media(max-width:800px){.products{grid-template-columns:1fr}nav{display:none}.hero h1{font-size:36px}}
+:root {
+  --bg: #100b10;
+  --panel: #1d131d;
+  --panel2: #261925;
+  --text: #fff6fa;
+  --muted: #d2bdc9;
+  --accent: #d783a4;
+  --accent2: #f1c3d5;
+  --line: #4a3042;
+  --max: 1180px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(
+    circle at 80% 0%,
+    #351d30 0,
+    #100b10 38%
+  );
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(16, 11, 16, 0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 6%;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: 4px;
+}
+
+nav {
+  display: flex;
+  gap: 28px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+nav a:hover {
+  color: var(--accent2);
+}
+
+.hero {
+  max-width: var(--max);
+  margin: auto;
+  min-height: 590px;
+  padding: 90px 6%;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 45px;
+}
+
+.eyebrow {
+  color: var(--accent2);
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: clamp(42px, 6vw, 76px);
+  line-height: 1.02;
+  margin: 18px 0;
+}
+
+.hero p {
+  font-size: 19px;
+  color: var(--muted);
+  max-width: 520px;
+}
+
+.hero-art {
+  min-height: 390px;
+  border-radius: 28px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(215, 131, 164, 0.18),
+      rgba(255, 255, 255, 0.03)
+    ),
+    url("https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=1000&q=85")
+    center / cover;
+  box-shadow: 0 20px 70px #0008;
+  border: 1px solid var(--line);
+}
+
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #21101a;
+  text-decoration: none;
+  font-weight: 800;
+  padding: 14px 22px;
+  border-radius: 999px;
+  margin-top: 16px;
+}
+
+.btn:hover {
+  background: var(--accent2);
+}
+
+.section {
+  max-width: var(--max);
+  margin: auto;
+  padding: 80px 6%;
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 38px;
+}
+
+h2 {
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.1;
+  margin: 10px 0 14px;
+}
+
+.section-heading p,
+.muted {
+  color: var(--muted);
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 25px 0 35px;
+}
+
+.filter {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+  padding: 10px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.filter.active,
+.filter:hover {
+  background: var(--accent);
+  color: #21101a;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.product {
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    var(--panel2),
+    var(--panel)
+  );
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.product img {
+  width: 100%;
+  height: 245px;
+  object-fit: cover;
+  display: block;
+}
+
+.product-body {
+  padding: 23px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.tag {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--accent2);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.product h3 {
+  font-size: 22px;
+  line-height: 1.2;
+  margin: 10px 0;
+}
+
+.product p {
+  color: var(--muted);
+  margin: 0 0 18px;
+}
+
+.product .btn {
+  margin-top: auto;
+  text-align: center;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.info {
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(29, 19, 29, 0.75);
+}
+
+.info strong {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.notice {
+  border: 1px solid #6d4b5e;
+  background: #241725;
+  border-radius: 16px;
+  padding: 22px;
+  color: var(--muted);
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 40px 6%;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+@media (max-width: 850px) {
+  header {
+    padding: 18px 5%;
+  }
+
+  .logo {
+    font-size: 19px;
+  }
+
+  nav {
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 12px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 60px;
+  }
+
+  .hero-art {
+    min-height: 300px;
+  }
+
+  .products,
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 55px 5%;
+  }
+}
 </style>
 </head>
 
 <body>
 
 <header>
-<div class="logo">LUNÉ BATH CO.</div>
-<nav>
-<a href="#collection">Collection</a>
-<a href="#about">About</a>
-<a href="#how">How it works</a>
-</nav>
+  <div class="logo">LUNÉ BATH CO.</div>
+
+  <nav>
+    <a href="#collection">Collection</a>
+    <a href="#why">Why LUNÉ</a>
+    <a href="#how">How it works</a>
+  </nav>
 </header>
 
-<div class="hero">
-<h1>Your daily ritual of relaxation</h1>
-<p>Bombas de banho, aromas e momentos de autocuidado.</p>
-<a class="btn" href="#collection">EXPLORAR COLEÇÃO</a>
-</div>
+<main>
 
-<section id="collection">
-<h2>Bath & Wellness Collection</h2>
-<p class="intro">Descobre produtos selecionados para transformar o teu banho num momento especial.</p>
+<section class="hero">
 
-<div class="products">
+  <div>
+    <div class="eyebrow">
+      Bath rituals · Self-care · Gift ideas
+    </div>
 
-<div class="card">
-<h3>Bombas de banho aromáticas</h3>
-<p>Explora diferentes aromas e experiências sensoriais para o teu banho.</p>
-<a class="btn" target="_blank" href="https://www.amazon.es/s?k=bath+bombs">VER PRODUTOS</a>
-</div>
+    <h1>
+      Make room for a little more calm.
+    </h1>
 
-<div class="card">
-<h3>Kits de presente</h3>
-<p>Ideias de presentes para aniversários, ocasiões especiais e autocuidado.</p>
-<a class="btn" target="_blank" href="https://www.amazon.es/s?k=bath+gift+set">VER PRODUTOS</a>
-</div>
+    <p>
+      Descobre inspiração para transformar o banho num ritual
+      de relaxamento, com bombas de banho, aromas e presentes
+      de spa.
+    </p>
 
-<div class="card">
-<h3>Sais de banho</h3>
-<p>Complementos para criar um ambiente relaxante em casa.</p>
-<a class="btn" target="_blank" href="https://www.amazon.es/s?k=bath+salts">VER PRODUTOS</a>
-</div>
+    <a class="btn" href="#collection">
+      Explorar coleção ↓
+    </a>
+  </div>
 
-<div class="card">
-<h3>Bombas de banho naturais</h3>
-<p>Pesquisa opções com ingredientes e características adequadas às tuas preferências.</p>
-<a class="btn" target="_blank" href="https://www.amazon.es/s?k=natural+bath+bombs">VER PRODUTOS</a>
-</div>
+  <div
+    class="hero-art"
+    role="img"
+    aria-label="Ambiente relaxante de banho e spa">
+  </div>
 
-<div class="card">
-<h3>Caixas de spa</h3>
-<p>Conjuntos de banho e bem-estar para uma experiência completa.</p>
-<a class="btn" target="_blank" href="https://www.amazon.es/s?k=spa+gift+box">VER PRODUTOS</a>
-</div>
-
-<div class="card">
-<h3>Shower steamers</h3>
-<p>Alternativas para quem prefere uma experiência aromática no duche.</p>
-<a class="btn" target="_blank" href="https://www.amazon.es/s?k=shower+steamers">VER PRODUTOS</a>
-</div>
-
-</div>
 </section>
 
-<section id="about">
-<h2>About LUNÉ BATH CO.</h2>
-<p class="intro">Uma seleção independente de produtos de banho e autocuidado para explorar novas rotinas de relaxamento.</p>
+
+<section class="section" id="collection">
+
+  <div class="section-heading">
+
+    <div class="eyebrow">
+      Curated collection
+    </div>
+
+    <h2>
+      Encontra o teu ritual
+    </h2>
+
+    <p>
+      Recomendações organizadas para descobrires produtos
+      de banho e bem-estar na Amazon.
+    </p>
+
+  </div>
+
+
+  <div class="filters" aria-label="Filtrar produtos">
+
+    <button class="filter active" data-filter="all">
+      Todos
+    </button>
+
+    <button class="filter" data-filter="bath">
+      Bombas de banho
+    </button>
+
+    <button class="filter" data-filter="gifts">
+      Presentes
+    </button>
+
+    <button class="filter" data-filter="spa">
+      Spa & relaxamento
+    </button>
+
+  </div>
+
+
+  <div class="products">
+
+
+    <article class="product" data-category="bath">
+
+      <img
+        src="https://images.unsplash.com/photo-1607006483225-2c5a2c7f3c1f?auto=format&fit=crop&w=900&q=85"
+        alt="Bombas de banho coloridas"
+        loading="lazy">
+
+      <div class="product-body">
+
+        <div class="tag">
+          Bath essentials
+        </div>
+
+        <h3>
+          Bombas de banho aromáticas
+        </h3>
+
+        <p>
+          Explora aromas, cores e formatos para criar
+          uma experiência de banho especial.
+        </p>
+
+        <a
+          class="btn"
+          target="_blank"
+          rel="noopener"
+          href="https://www.amazon.es/s?k=bath+bombs">
+
+          Ver na Amazon
+
+        </a>
+
+      </div>
+
+    </article>
+
+
+
+    <article class="product" data-category="gifts">
+
+      <img
+        src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=85"
+        alt="Ambiente de spa e autocuidado"
+        loading="lazy">
+
+      <div class="product-body">
+
+        <div class="tag">
+          Gift ideas
+        </div>
+
+        <h3>
+          Kits de presente
+        </h3>
+
+        <p>
+          Ideias de conjuntos para aniversários,
+          ocasiões especiais e momentos de autocuidado.
+        </p>
+
+        <a
+          class="btn"
+          target="_blank"
+          rel="noopener"
+          href="https://www.amazon.es/s?k=bath+gift+set">
+
+          Ver na Amazon
+
+        </a>
+
+      </div>
+
+    </article>
+
+
+
+    <article class="product" data-category="spa">
+
+      <img
+        src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=900&q=85"
+        alt="Sais de banho e toalha"
+        loading="lazy">
+
+      <div class="product-body">
+
+        <div class="tag">
+          Spa at home
+        </div>
+
+        <h3>
+          Sais de banho
+        </h3>
+
+        <p>
+          Complementos para criar uma atmosfera tranquila
+          e um ritual de descanso em casa.
+        </p>
+
+        <a
+          class="btn"
+          target="_blank"
+          rel="noopener"
+          href="https://www.amazon.es/s?k=bath+salts">
+
+          Ver na Amazon
+
+        </a>
+
+      </div>
+
+    </article>
+
+
+
+    <article class="product" data-category="bath">
+
+      <img
+        src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=85"
+        alt="Produtos de banho e cuidados pessoais"
+        loading="lazy">
+
+      <div class="product-body">
+
+        <div class="tag">
+          Ingredient focus
+        </div>
+
+        <h3>
+          Bombas de banho naturais
+        </h3>
+
+        <p>
+          Pesquisa opções e consulta sempre os ingredientes,
+          alergénios e advertências do produto.
+        </p>
+
+        <a
+          class="btn"
+          target="_blank"
+          rel="noopener"
+          href="https://www.amazon.es/s?k=natural+bath+bombs">
+
+          Ver na Amazon
+
+        </a>
+
+      </div>
+
+    </article>
+
+
+
+    <article class="product" data-category="gifts">
+
+      <img
+        src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=900&q=85"
+        alt="Caixa de produtos de spa"
+        loading="lazy">
+
+      <div class="product-body">
+
+        <div class="tag">
+          Gift boxes
+        </div>
+
+        <h3>
+          Caixas de spa
+        </h3>
+
+        <p>
+          Conjuntos pensados para oferecer ou montar
+          uma experiência de spa em casa.
+        </p>
+
+        <a
+          class="btn"
+          target="_blank"
+          rel="noopener"
+          href="https://www.amazon.es/s?k=spa+gift+box">
+
+          Ver na Amazon
+
+        </a>
+
+      </div>
+
+    </article>
+
+
+
+    <article class="product" data-category="spa">
+
+      <img
+        src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=900&q=85"
+        alt="Ritual de banho relaxante"
+        loading="lazy">
+
+      <div class="product-body">
+
+        <div class="tag">
+          Shower ritual
+        </div>
+
+        <h3>
+          Shower steamers
+        </h3>
+
+        <p>
+          Uma alternativa para quem prefere uma experiência
+          aromática no duche.
+        </p>
+
+        <a
+          class="btn"
+          target="_blank"
+          rel="noopener"
+          href="https://www.amazon.es/s?k=shower+steamers">
+
+          Ver na Amazon
+
+        </a>
+
+      </div>
+
+    </article>
+
+
+  </div>
+
 </section>
 
-<section id="how">
-<h2>Como funciona</h2>
-<p class="intro">Explora as recomendações e, quando disponível, visita a Amazon através dos nossos links. Os produtos são vendidos pela Amazon ou pelos respetivos vendedores.</p>
+
+
+<section class="section" id="why">
+
+  <div class="section-heading">
+
+    <div class="eyebrow">
+      The LUNÉ approach
+    </div>
+
+    <h2>
+      Escolhas simples. Momentos melhores.
+    </h2>
+
+    <p>
+      Conteúdo pensado para ajudar a comparar opções
+      sem promessas exageradas.
+    </p>
+
+  </div>
+
+
+  <div class="info-grid">
+
+    <div class="info">
+
+      <strong>
+        Seleção temática
+      </strong>
+
+      <span class="muted">
+        Categorias claras para encontrares mais rapidamente
+        o tipo de produto que procuras.
+      </span>
+
+    </div>
+
+
+    <div class="info">
+
+      <strong>
+        Compra informada
+      </strong>
+
+      <span class="muted">
+        Consulta ingredientes, avaliações, preço e condições
+        diretamente na página do vendedor.
+      </span>
+
+    </div>
+
+
+    <div class="info">
+
+      <strong>
+        Sem stock próprio
+      </strong>
+
+      <span class="muted">
+        A LUNÉ BATH CO. encaminha para a Amazon;
+        a compra é concluída na plataforma do vendedor.
+      </span>
+
+    </div>
+
+  </div>
+
 </section>
+
+
+
+<section class="section" id="how">
+
+  <div class="section-heading">
+
+    <div class="eyebrow">
+      How it works
+    </div>
+
+    <h2>
+      Como funciona?
+    </h2>
+
+  </div>
+
+
+  <div class="notice">
+
+    <strong>
+      Transparência de afiliado
+    </strong>
+
+    <br><br>
+
+    A LUNÉ BATH CO. pode receber uma comissão por compras
+    elegíveis realizadas através de links de afiliado.
+
+    Os preços, a disponibilidade, o envio e as condições
+    são confirmados na Amazon.
+
+    <br><br>
+
+    Os links desta versão são pesquisas de exemplo
+    e serão substituídos por links oficiais após a aprovação
+    no programa de afiliados.
+
+  </div>
+
+</section>
+
+</main>
+
+
 
 <footer>
-<p>LUNÉ BATH CO. © 2026</p>
-<p>Divulgação de afiliado: podemos receber uma comissão por compras elegíveis.</p>
+
+  <p>
+    <strong>LUNÉ BATH CO.</strong>
+    — Bath rituals & wellness inspiration
+  </p>
+
+  <p>
+    © 2026 LUNÉ BATH CO.
+    · Affiliate disclosure
+    · Privacy
+    · Contact
+  </p>
+
 </footer>
+
+
+
+<script>
+
+const buttons = document.querySelectorAll(".filter");
+const cards = document.querySelectorAll(".product");
+
+buttons.forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    buttons.forEach(item => {
+      item.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+    const selected = button.dataset.filter;
+
+    cards.forEach(card => {
+
+      if (
+        selected === "all" ||
+        card.dataset.category === selected
+      ) {
+
+        card.style.display = "flex";
+
+      } else {
+
+        card.style.display = "none";
+
+      }
+
+    });
+
+  });
+
+});
+
+</script>
 
 </body>
 </html>
